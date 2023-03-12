@@ -12,7 +12,6 @@ import javax.persistence.Table;
 @Entity
 @Table(name="CONTATOS_110068")
 public class Contato implements Serializable {
-
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -63,6 +62,6 @@ public class Contato implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Contato Details?= Id: " + this.id + ", Nome: " + this.Nome + ", REndereco: " + this.Endereco + ", Telefone: " + this.Telefone;
+		return "{ \"id\": " + this.id + ", \"nome\": \"" + this.Nome + "\", \"endereco\": \"" + this.Endereco + "\", \"telefone\": \"" + this.Telefone + "\"}";
 	}
 }

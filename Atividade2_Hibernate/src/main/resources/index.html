@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <title>Teste do Banco de Dado de Contatos</title>
 
 <head>
-    <meta charset="ISO-8859-1">
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css" />
@@ -33,9 +33,9 @@
         <section class="section--row__responsive">
             <h1 class="generaltext">Pesquisar Contato</h1>
             <br>
-            <form onsubmit="addIdToPath('form-count', 'http://localhost:6789/recomendar/count/')" method="get"
-                id="form-count">
-                <input class="input--down" type="text" id="id" value="" placeholder="Nome">
+            <form onsubmit="addIdToPath('pesquisar-form', 'http://localhost:6789/contato/')" method="get" id="pesquisar-form">
+                <p>Código:</p>
+                <input class="input--register" type="text" name="pesquisar-codigo" id="id" value="" placeholder="16548">
                 <input type="submit" value="Consultar" class="input--button input--consult__style">
             </form>
         </section>
@@ -47,14 +47,13 @@
         <section class="section--mainrow__responsive first--section">
             <h1 class="generaltext" style="margin-bottom: 25px;">Registrar Novo Contato</h1>
             <br>
-            <form class="form--register" action="http://localhost:6789/recomendar" method="post" id="form-add">
-                <p>Nome de Usuário:</p>
-                <input class="input--register" type="text" name="usuario_nome" value="" placeholder="Username">
-                <p>URL:</p>
-                <input class="input--register" type="text" name="sites_url" value="" placeholder="www.google.com">
-                <p>Classificação:</p>
-                <input class="input--register" type="text" name="seguro" value=""
-                    placeholder="1 (Seguro) e 0 (Não Seguro)">
+            <form class="form--register" action="http://localhost:6789/contato" method="post" id="form-add">
+                <p>Nome:</p>
+                <input class="input--register" type="text" name="nome" value="" placeholder="Jorge Arruda">
+                <p>Endereço:</p>
+                <input class="input--register" type="text" name="endereco" value="" placeholder="Rua dos Carpinteiros">
+                <p>Telefone:</p>
+                <input class="input--register" type="text" name="telefone" value="" placeholder="12 3456-7890">
                 <br><br>
                 <input type="submit" value="Cadastrar" class="input--main__style input--recomendar">
             </form>
@@ -67,17 +66,17 @@
         <section class="section--mainrow__responsive first--section">
             <h1 class="generaltext" style="margin-bottom: 25px;">Atualizar Contato</h1>
             <br>
-            <form class="form--register" action="http://localhost:6789/recomendar/update/:sites_url" method="get"
-                id="form-update">
-                <p>Nome de Usuário:</p>
-                <input class="input--register" type="text" name="usuario_nome" value="" placeholder="Username">
-                <p>URL:</p>
-                <input class="input--register" type="text" name="sites_url" value="" placeholder="www.google.com">
-                <p>Nova Classificação:</p>
-                <input class="input--register" type="text" name="seguro" value=""
-                    placeholder="1 (Seguro) e 0 (Não Seguro)">
+            <form class="form--register" onsubmit="addIdToPath('form-get', 'http://localhost:6789/contato/update/')" method="post">
+                <p>Código:</p>
+                <input class="input--register" type="text" name="codigo" value="" placeholder="16548">
+                <p>Nome:</p>
+                <input class="input--register" type="text" name="nome" value="" placeholder="Jorge Arruda">
+                <p>Endereço:</p>
+                <input class="input--register" type="text" name="endereco" value="" placeholder="Rua dos Carpinteiros">
+                <p>Telefone:</p>
+                <input class="input--register" type="text" name="telefone" value="" placeholder="12 3456-7890">
                 <br><br>
-                <input type="submit" value="Atualizar" class="input--main__style input--button">
+                <input type="submit" value="Cadastrar" class="input--main__style input--recomendar">
             </form>
         </section>
     </section>
@@ -88,11 +87,9 @@
         <section class="section--mainrow__responsive first--section">
             <h1 class="generaltext">Excluir Contato</h1>
             <br>
-            <form class="form--register" action="http://localhost:6789/site" method="post" id="form-add">
-                <p>Nome do Site:</p>
-                <input class="input--register" type="text" name="nome" value="" placeholder="Google">
-                <p>URL:</p>
-                <input class="input--register" type="text" name="url" value="" placeholder="www.google.com">
+            <form class="form--register" onsubmit="addIdToPath('form-get', 'http://localhost:6789/contato/delete/')" method="get">
+                <p>Código:</p>
+                <input class="input--register" type="text" name="excluir-codigo" value="" placeholder="16548">
                 <br><br>
                 <input type="submit" value="Remover" class="input--main__style input--button">
             </form>
@@ -103,15 +100,15 @@
         <table border="1">
             <tr>
                 <td>Nome:</td>
-                <td><span id="nome">Sem Resultado</span></td>
+                <td><span id="erro-nome">Sem Resultado</span></td>
             </tr>
             <tr>
-                <td>URL:</td>
-                <td><span id="url">Sem Resultado</span></td>
+                <td>Endereço:</td>
+                <td><span id="erro-endereco">Sem Resultado</span></td>
             </tr>
             <tr>
-                <td>Classificação:</td>
-                <td><span id="seguro">Sem Resultado</span></td>
+                <td>Telefone:</td>
+                <td><span id="erro-telefone">Sem Resultado</span></td>
             </tr>
         </table>
     </section>

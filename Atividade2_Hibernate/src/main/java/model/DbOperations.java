@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.log4j.Logger;
+import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -33,8 +34,8 @@ public class DbOperations {
 	}
 
 	// Method 1: This Method Used To Create A New Student Record In The Database Table
-	public static void createRecord() {
-		int count = 0;
+	public static int createRecord(String nome, String endereco, String telefone)  {
+        int id = 0;
 		Contato contatoObj = null;
 		try {
 			// Getting Session Object From SessionFactory
@@ -43,18 +44,16 @@ public class DbOperations {
 			sessionObj.beginTransaction();
 
 			// Creating Transaction Entities
-			for(int j = 101; j <= 105; j++) {
-				count = count + 1;
-				contatoObj = new Contato();
-				contatoObj.setEndereco("RUA XXXXX, 999");
-				contatoObj.setNome("aluno " + j);
-				contatoObj.setTelefone("(31)9999-8877");
-				sessionObj.save(contatoObj);
-			}
+			contatoObj = new Contato();
+			contatoObj.setNome(nome);
+			contatoObj.setEndereco(endereco);
+			contatoObj.setTelefone(telefone);
+			sessionObj.save(contatoObj);
+            id = contatoObj.getId();
 
 			// Committing The Transactions To The Database
 			sessionObj.getTransaction().commit();
-			logger.info("\nSuccessfully Created '" + count + "' Records In The Database!\n");
+			logger.info("\nSuccessfully Created record in The Database!\n");
 		} catch(Exception sqlException) {
 			if(null != sessionObj.getTransaction()) {
 				logger.info("\n.......Transaction Is Being Rolled Back.......\n");
@@ -66,6 +65,8 @@ public class DbOperations {
 				sessionObj.close();
 			}
 		}
+
+        return id;
 	}
 
 	// Method 2: This Method Is Used To Display The Records From The Database Table
@@ -159,13 +160,15 @@ public class DbOperations {
 			sessionObj.beginTransaction();
 
 			findContatoObj = (Contato) sessionObj.load(Contato.class, id);
-		} catch(Exception sqlException) {
-			if(null != sessionObj.getTransaction()) {
-				logger.info("\n.......Transaction Is Being Rolled Back.......\n");
-				sessionObj.getTransaction().rollback();
-			}
-			sqlException.printStackTrace();
-		}
+        } catch(HibernateException ex) {
+            ex.printStackTrace();
+        } catch(Exception sqlException) {
+            if(null != sessionObj.getTransaction()) {
+                logger.info("\n.......Transaction Is Being Rolled Back.......\n");
+                sessionObj.getTransaction().rollback();
+            }
+            sqlException.printStackTrace();
+        }
 		return findContatoObj;
 	}
 

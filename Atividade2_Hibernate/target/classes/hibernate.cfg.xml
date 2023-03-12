@@ -19,6 +19,6 @@
 		<property name="hibernate.current_session_context_class">org.hibernate.context.internal.ThreadLocalSessionContext</property>
 
 		<!-- Mapping With Model Class Containing Annotations -->
-		<mapping class="com.jcg.hibernate.crud.operations.model.Contato" />
+		<mapping class="model.Contato" />
 	</session-factory>
 </hibernate-configuration>
