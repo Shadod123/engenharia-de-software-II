@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Teste do Banco de Dado de Contatos</title>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <script type="text/javascript">
+
+        function addIdToPath(form_name, base_url) {
+            var your_form = document.getElementById(form_name);
+            var id = your_form.elements.namedItem("id").value;
+            action_src = base_url + id;
+            your_form.action = action_src;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div class="container">
+        <p>
+        <h1>BD de Contatos - Teste</h1>
+        </p>
+    </div>
+
+    <section class="section--container__responsive">
+        <section class="section--row__responsive">
+            <h1 class="generaltext">Pesquisar Contato</h1>
+            <br>
+            <form onsubmit="addIdToPath('form-count', 'http://localhost:6789/recomendar/count/')" method="get"
+                id="form-count">
+                <input class="input--down" type="text" id="id" value="" placeholder="Nome">
+                <input type="submit" value="Consultar" class="input--button input--consult__style">
+            </form>
+        </section>
+    </section>
+
+    <br><br><br>
+
+    <section class="section--container__responsive">
+        <section class="section--mainrow__responsive first--section">
+            <h1 class="generaltext" style="margin-bottom: 25px;">Registrar Novo Contato</h1>
+            <br>
+            <form class="form--register" action="http://localhost:6789/recomendar" method="post" id="form-add">
+                <p>Nome de Usuário:</p>
+                <input class="input--register" type="text" name="usuario_nome" value="" placeholder="Username">
+                <p>URL:</p>
+                <input class="input--register" type="text" name="sites_url" value="" placeholder="www.google.com">
+                <p>Classificação:</p>
+                <input class="input--register" type="text" name="seguro" value=""
+                    placeholder="1 (Seguro) e 0 (Não Seguro)">
+                <br><br>
+                <input type="submit" value="Cadastrar" class="input--main__style input--recomendar">
+            </form>
+        </section>
+    </section>
+
+    <br><br><br>
+
+    <section class="section--container__responsive">
+        <section class="section--mainrow__responsive first--section">
+            <h1 class="generaltext" style="margin-bottom: 25px;">Atualizar Contato</h1>
+            <br>
+            <form class="form--register" action="http://localhost:6789/recomendar/update/:sites_url" method="get"
+                id="form-update">
+                <p>Nome de Usuário:</p>
+                <input class="input--register" type="text" name="usuario_nome" value="" placeholder="Username">
+                <p>URL:</p>
+                <input class="input--register" type="text" name="sites_url" value="" placeholder="www.google.com">
+                <p>Nova Classificação:</p>
+                <input class="input--register" type="text" name="seguro" value=""
+                    placeholder="1 (Seguro) e 0 (Não Seguro)">
+                <br><br>
+                <input type="submit" value="Atualizar" class="input--main__style input--button">
+            </form>
+        </section>
+    </section>
+
+    <br><br><br>
+
+    <section class="section--container__responsive">
+        <section class="section--mainrow__responsive first--section">
+            <h1 class="generaltext">Excluir Contato</h1>
+            <br>
+            <form class="form--register" action="http://localhost:6789/site" method="post" id="form-add">
+                <p>Nome do Site:</p>
+                <input class="input--register" type="text" name="nome" value="" placeholder="Google">
+                <p>URL:</p>
+                <input class="input--register" type="text" name="url" value="" placeholder="www.google.com">
+                <br><br>
+                <input type="submit" value="Remover" class="input--main__style input--button">
+            </form>
+        </section>
+    </section>
+
+    <section class="section--container__responsive" style="visibility: hidden" id="site-result">
+        <table border="1">
+            <tr>
+                <td>Nome:</td>
+                <td><span id="nome">Sem Resultado</span></td>
+            </tr>
+            <tr>
+                <td>URL:</td>
+                <td><span id="url">Sem Resultado</span></td>
+            </tr>
+            <tr>
+                <td>Classificação:</td>
+                <td><span id="seguro">Sem Resultado</span></td>
+            </tr>
+        </table>
+    </section>
+
+    <!-- Rodape -->
+    <footer class="text-light">
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-6">
+                <div class="direitosautorais">
+                    Copyright 2023 - Engenharia de Software II - <b>ICEI PUC Minas</b>
+                </div>
+            </div>
+            <div class="col-lg-1">
+                <div class="backtotop">
+                    <a href="#">Back to top</a>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

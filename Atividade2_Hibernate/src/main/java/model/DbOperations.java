@@ -1,4 +1,4 @@
-package com.jcg.hibernate.crud.operations.model;
+package model;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,7 @@ public class DbOperations {
 		configObj.configure("hibernate.cfg.xml");
 
 		// Since Hibernate Version 4.x, ServiceRegistry Is Being Used
-		ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build(); 
+		ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
 
 		// Creating Hibernate SessionFactory Instance
 		sessionFactoryObj = configObj.buildSessionFactory(serviceRegistryObj);
@@ -93,7 +93,7 @@ public class DbOperations {
 		return contatosList;
 	}
 
-	// Method 3: This Method Is Used To Update A Record In The Database Table	
+	// Method 3: This Method Is Used To Update A Record In The Database Table
 	public static void updateRecord(int id) {
 		try {
 			// Getting Session Object From SessionFactory
@@ -165,7 +165,7 @@ public class DbOperations {
 				sessionObj.getTransaction().rollback();
 			}
 			sqlException.printStackTrace();
-		} 
+		}
 		return findContatoObj;
 	}
 

@@ -6,8 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="03ProdutoService" />
         <module name="HibernateCrud" />
-        <module name="Atividade2_ES2_Hibernate" />
       </profile>
     </annotationProcessing>
   </component>

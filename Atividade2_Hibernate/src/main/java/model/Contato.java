@@ -1,4 +1,4 @@
-package com.jcg.hibernate.crud.operations.model;
+package model;
 
 import java.io.Serializable;
 
