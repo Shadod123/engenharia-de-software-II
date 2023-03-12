@@ -1,0 +1,200 @@
+.navbar {
+    justify-content: center;
+    background: #343a40;
+}
+
+.navbar-brand {
+    font-size: larger;
+    padding: 0px;
+    margin: 0px;
+    color: #ddd;
+    text-align: center;
+}
+
+/*Rodape*/
+.direitosautorais {
+    text-align: left;
+    color: #f8f9fa;
+    font-size: large;
+    padding: 0px;
+}
+
+.backtotop {
+    text-align: end;
+}
+
+.logobottom {
+    text-align: end;
+}
+
+footer {
+    background: #343a40;
+    padding: 40px;
+}
+
+footer a {
+    color: #f8f9fa !important;
+}
+
+/*Pagina*/
+body {
+    font-weight: bold;
+	font-family: Calibri;
+	font-size: large;
+    /*background-color: #0b1c58;*/
+    background-color: #f5f9fdfd;
+
+}
+
+a {
+    color: #ddd;
+    font-size: large;
+}
+
+p {
+    color: rgb(0, 0, 0);
+    font-size: large;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    /*color: #eee;*/
+    color: #000000;
+    margin-bottom: 30px;
+    font-weight: bold;
+	font-family: Calibri;
+}
+
+.container {
+    padding: 40px;
+    margin: 0 auto;
+    max-width: 1000px;
+    text-align: center;
+}
+
+/*----- Text Box  */
+
+#textWrapper {
+    position: relative;
+    padding: 10px;
+
+    border-radius: 25px;
+    /*background: #eaeaea44;*/
+    background-color: rgb(126, 126, 126);
+    padding: 20px;
+    margin: 20px;
+}
+
+.generaltext, p {
+	font-family: Calibri;
+	text-align: center;
+}
+
+.section--container__responsive {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	/*border-bottom: dashed;*/
+	border-color: gray;
+}
+
+.input--down {
+	display: block;
+	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.input--main__style {
+	background-color: #00D200;
+}
+
+.input--remove__style {
+	background-color: red;
+}
+
+.input--consult__style {
+	background-color: darkblue;
+}
+
+.input--button {
+	font-weight: bold;
+	font-family: Calibri;
+	font-size: large;
+	display: block;
+  	border-radius: 4px;
+  	background-color: #1351B4;
+  	border: none;
+  	color: #FFFFFF;
+  	text-align: center;
+  	padding: 10px;
+  	width: 100px;
+  	transition: all 0.5s;
+  	cursor: pointer;
+  	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.input--recomendar {
+	font-weight: bold;
+	font-family: Calibri;
+	font-size: large;
+	display: block;
+  	border-radius: 4px;
+  	background-color: #1351B4;
+  	border: none;
+  	color: #FFFFFF;
+  	text-align: center;
+  	padding: 10px;
+  	width: 120px;
+  	transition: all 0.5s;
+  	cursor: pointer;
+  	margin: 0px auto;
+	margin-bottom: 10px;
+}
+
+.input--register {
+	display: inline;
+}
+
+.input--radio {
+	display: inline;
+}
+
+input {
+	display: block;
+	border-radius: 7px;
+	padding: 10px;
+	border-style: solid;
+	border-color: lightgray;
+	color: black;
+	padding: 10px;
+	margin-bottom: 10px;
+}
+
+.p--radio__display {
+	display: block;
+}
+
+form p {
+	text-align: initial;
+	display: inline;
+	margin-left: 15px;
+}
+
+.p--nomargin {
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+
+.icone{
+    float: left;
+}
+
+#back{
+    position: relative;
+}

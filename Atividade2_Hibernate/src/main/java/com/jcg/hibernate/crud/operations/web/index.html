@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<title>Teste do Banco de Dado de Contatos</title>
+<head>
+	<meta charset="ISO-8859-1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+    <section class="section--container__responsive">
+        <section class="section--mainrow__responsive first--section">
+            <h1>Pesquisar Contato</h1>
+            <form action="read" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <input type="submit" value="Buscar">
+            </form>
+        
+            <br><br>
+        
+            <h1>Registrar Novo Contato</h1>
+	        <form action="create" method="post">
+	        	<label for="nome">Nome:</label>
+	        	<input type="text" id="nome" name="nome">
+            
+	        	<label for="email">Email:</label>
+	        	<input type="email" id="email" name="email">
+            
+	        	<label for="telefone">Telefone:</label>
+	        	<input type="text" id="telefone" name="telefone">
+            
+	        	<input type="submit" value="Cadastrar">
+	        </form>
+        
+            <br><br>
+        
+            <h1>Atualizar Contato</h1>
+            <form action="update" method="post">   
+                <label for="nome">Novo Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            
+                <label for="email">Novo Email:</label>
+                <input type="text" id="email" name="email" required>
+            
+                <label for="telefone">Novo Telefone:</label>
+                <input type="text" id="telefone" name="telefone" required>
+            
+                <input type="submit" value="Atualizar">
+            </form>
+        
+            <br><br>
+        
+            <h1>Excluir Contato</h1>
+            <form action="delete-contato" method="post">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <input type="submit" value="Remover">
+            </form>
+        </section>
+    </section>
+</body>
+
+</html>
