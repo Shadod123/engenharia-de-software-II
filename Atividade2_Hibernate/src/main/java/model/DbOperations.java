@@ -54,6 +54,8 @@ public class DbOperations {
 			// Committing The Transactions To The Database
 			sessionObj.getTransaction().commit();
 			logger.info("\nSuccessfully Created record in The Database!\n");
+        } catch(HibernateException ex) {
+            // TUDO OK.
 		} catch(Exception sqlException) {
 			if(null != sessionObj.getTransaction()) {
 				logger.info("\n.......Transaction Is Being Rolled Back.......\n");
