@@ -37,6 +37,7 @@ public class DbOperations {
 	public static int createRecord(String nome, String endereco, String telefone)  {
         int id = 0;
 		Contato contatoObj = null;
+
 		try {
 			// Getting Session Object From SessionFactory
 			sessionObj = buildSessionFactory().openSession();
@@ -75,6 +76,7 @@ public class DbOperations {
 	@SuppressWarnings("unchecked")
 	public static List<Contato> displayRecords() {
 		List<Contato> contatosList = new ArrayList<Contato>();
+
 		try {
 			// Getting Session Object From SessionFactory
 			sessionObj = buildSessionFactory().openSession();
@@ -97,7 +99,7 @@ public class DbOperations {
 	}
 
 	// Method 3: This Method Is Used To Update A Record In The Database Table
-	public static void updateRecord(int id) {
+	public static int updateRecord(int id, String nome, String endereco, String telefone) {
 		try {
 			// Getting Session Object From SessionFactory
 			sessionObj = buildSessionFactory().openSession();
@@ -105,9 +107,11 @@ public class DbOperations {
 			sessionObj.beginTransaction();
 
 			// Creating Transaction Entity
-			Contato contatObj = (Contato) sessionObj.get(Contato.class, id);
-			contatObj.setNome("Jose");
-			contatObj.setEndereco("AV AAA, 777");
+			Contato contatoObj = (Contato) sessionObj.get(Contato.class, id);
+            contatoObj.setNome(nome);
+            contatoObj.setEndereco(endereco);
+            contatoObj.setTelefone(telefone);
+            //sessionObj.save(contatoObj);
 
 			// Committing The Transactions To The Database
 			sessionObj.getTransaction().commit();
@@ -123,17 +127,21 @@ public class DbOperations {
 				sessionObj.close();
 			}
 		}
+
+        return id;
 	}
 
 	// Method 4(a): This Method Is Used To Delete A Particular Record From The Database Table
-	public static void deleteRecord(Integer id) {
+	public static Object deleteRecord(Integer id) {
+        Contato contatoObj = null;
+
 		try {
 			// Getting Session Object From SessionFactory
 			sessionObj = buildSessionFactory().openSession();
 			// Getting Transaction Object From Session Object
 			sessionObj.beginTransaction();
 
-			Contato contatoObj = findRecordById(id);
+			contatoObj = findRecordById(id);
 			sessionObj.delete(contatoObj);
 
 			// Committing The Transactions To The Database
@@ -150,6 +158,8 @@ public class DbOperations {
 				sessionObj.close();
 			}
 		}
+
+        return contatoObj;
 	}
 
 	// Method 4(b): This Method To Find Particular Record In The Database Table

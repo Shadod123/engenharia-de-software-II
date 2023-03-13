@@ -515,3 +515,42 @@ java.lang.reflect.InaccessibleObjectException: Unable to make protected final ja
 2023-03-12 18:55:35 INFO  DbOperations:56 - 
 Successfully Created record in The Database!
 
+2023-03-13 17:45:19 INFO  DbOperations:56 - 
+Successfully Created record in The Database!
+
+2023-03-13 18:03:18 INFO  DbOperations:56 - 
+Successfully Created record in The Database!
+
+2023-03-13 18:04:19 INFO  DbOperations:116 - 
+Contato With Id?= 63 Is Successfully Updated In The Database!
+
+2023-03-13 18:35:03 INFO  DbOperations:56 - 
+Successfully Created record in The Database!
+
+2023-03-13 18:35:59 INFO  DbOperations:116 - 
+Contato With Id?= 262 Is Successfully Updated In The Database!
+
+2023-03-13 18:42:33 INFO  DbOperations:147 - 
+Contato With Id?= 262 Is Successfully Deleted From The Database!
+
+2023-03-13 18:52:30 INFO  DbOperations:152 - 
+.......Transaction Is Being Rolled Back.......
+
+2023-03-13 18:52:50 INFO  DbOperations:152 - 
+.......Transaction Is Being Rolled Back.......
+
+2023-03-13 18:54:18 INFO  DbOperations:152 - 
+.......Transaction Is Being Rolled Back.......
+
+2023-03-13 18:57:22 INFO  DbOperations:118 - 
+Contato With Id?= 200 Is Successfully Updated In The Database!
+
+2023-03-13 18:57:41 INFO  DbOperations:149 - 
+Contato With Id?= 200 Is Successfully Deleted From The Database!
+
+2023-03-13 18:57:53 INFO  DbOperations:152 - 
+.......Transaction Is Being Rolled Back.......
+
+2023-03-13 18:57:57 INFO  DbOperations:152 - 
+.......Transaction Is Being Rolled Back.......
+

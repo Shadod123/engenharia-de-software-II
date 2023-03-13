@@ -33,7 +33,7 @@
         <section class="section--row__responsive">
             <h1 class="generaltext">Pesquisar Contato</h1>
             <br>
-            <form onsubmit="addIdToPath('pesquisar-form', 'http://localhost:6789/contato/')" method="get" id="pesquisar-form">
+            <form onsubmit="addIdToPath('form-search', 'http://localhost:6789/contato/')" method="get" id="form-search">
                 <p>Código:</p>
                 <input class="input--register" type="text" name="pesquisar-codigo" id="id" value="" placeholder="16548">
                 <input type="submit" value="Consultar" class="input--button input--consult__style">
@@ -66,7 +66,7 @@
         <section class="section--mainrow__responsive first--section">
             <h1 class="generaltext" style="margin-bottom: 25px;">Atualizar Contato</h1>
             <br>
-            <form class="form--register" onsubmit="addIdToPath('form-get', 'http://localhost:6789/contato/update/')" method="post">
+            <form class="form--register" action="http://localhost:6789/contato/update/:id" method="post" id="form-update">
                 <p>Código:</p>
                 <input class="input--register" type="text" name="codigo" value="" placeholder="16548">
                 <p>Nome:</p>
@@ -76,7 +76,7 @@
                 <p>Telefone:</p>
                 <input class="input--register" type="text" name="telefone" value="" placeholder="12 3456-7890">
                 <br><br>
-                <input type="submit" value="Cadastrar" class="input--main__style input--recomendar">
+                <input type="submit" value="Atualizar" class="input--main__style input--recomendar">
             </form>
         </section>
     </section>
@@ -87,9 +87,9 @@
         <section class="section--mainrow__responsive first--section">
             <h1 class="generaltext">Excluir Contato</h1>
             <br>
-            <form class="form--register" onsubmit="addIdToPath('form-get', 'http://localhost:6789/contato/delete/')" method="get">
+            <form class="form--register" action="http://localhost:6789/contato/delete/:id" method="get" id="form-delete">
                 <p>Código:</p>
-                <input class="input--register" type="text" name="excluir-codigo" value="" placeholder="16548">
+                <input class="input--register" type="text" name="codigo" value="" placeholder="16548">
                 <br><br>
                 <input type="submit" value="Remover" class="input--main__style input--button">
             </form>

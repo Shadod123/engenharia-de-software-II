@@ -17,9 +17,12 @@ public class ContatoService {
 		Contato contato = DbOperations.findRecordById(id);
 
 		if(contato == null) {
-            System.out.println("ERRO AAAAAAAAAAAAAAAAAAAAA");
+            System.out.println("Erro: Contato não existente!");
+            response.status(404);
+            return "Erro: Contato não existente!";
 		}
 
+        response.status(200); // 200 Succeded
         return contato;
     }
 
@@ -31,14 +34,43 @@ public class ContatoService {
 		int id = DbOperations.createRecord(nome, endereco, telefone);
 
         response.status(201); // 201 Created
-        return id;
+        return "Contato criado com sucesso! ID: " + id;
     }
 
-    public Object update(Request request, Response response) {
-        return new String();
+    public Object update(Request request, Response response){
+        int id = Integer.parseInt(request.queryParams("codigo"));
+        String novoNome = request.queryParams("nome");
+        String novoEndereco = request.queryParams("endereco");
+        String novoTelefone = request.queryParams("telefone");
+
+        Contato contato = DbOperations.findRecordById(id);
+
+        if(contato == null) {
+            System.out.println("Erro: Contato não existente!");
+            response.status(404);
+            return "Erro: Contato não existente!";
+        }
+
+        id = DbOperations.updateRecord(id, novoNome, novoEndereco, novoTelefone);
+
+        response.status(201); // 201 Created
+        return "Contato atualizado com sucesso!";
     }
 
-    public Object remove(Request request, Response response) {
-        return new String();
+    public Object remove(Request request, Response response){
+        int id = Integer.parseInt(request.queryParams("codigo"));
+
+        Contato contato = DbOperations.findRecordById(id);
+
+        if(contato == null) {
+            System.out.println("Erro: Contato não existente!");
+            response.status(404);
+            return "Erro: Contato não existente!";
+        }
+
+        Contato contatoDeletado = (Contato) DbOperations.deleteRecord(id);
+
+        response.status(200); // 200 Succeded
+        return "Contato removido com sucesso!";
     }
 }
