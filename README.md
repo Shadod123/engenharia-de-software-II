@@ -20,4 +20,6 @@ Ao usar a IDE Intellij IDEA, importar o projeto como "Maven Project".
 
 8. Revise as configurações de importação e clique em "Finish" (Concluir) para importar o projeto.
 
-*Obs: o arquivo HTML que representa o Front End da aplicação se encontra em Engenharia-de-Software-II\Atividade2_Hibernate\src\main\resources
+## Observação: 
+
+O arquivo HTML que representa o Front End da aplicação se encontra no seguinte caminho: "Engenharia-de-Software-II\Atividade2_Hibernate\src\main\resources"
